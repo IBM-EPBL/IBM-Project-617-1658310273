@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <meta charset="UTF-8">
+  <title>Rainfall Prediction</title> 
+</head>
+
+<body background="https://wallpaperaccess.com/full/701614.jpg" text="black">
+  
+  <div class="login">
+    <center><h1>Rainfall Prediction</h1></center>
+   <b> <h2>Please enter the following details</h2></b>
+
+     
+     <!-- Main Input For Receiving Query to our ML --> 
+    <form action="{{ url_for('predict')}}"method="post">
+
+</style></head>
+      
+      <label for="Location">Location:</label>
+        <select id="Location" name="Location">
+            <option value=2>Albury</option> 
+            <option value=4> BadgerysCreek</option> 
+            <option value=10>Cobar</option> 
+            <option value=11>CoffsHarbour</option> 
+            <option value=21>Moree</option> 
+            <option value=24>Newcastle</option> 
+            <option value=26>NorahHead</option> 
+            <option value=27>NorfolkIsland</option> 
+            <option value=3e>Penrith</option> 
+            <option value=34>Richmond</option>
+            <option value=37>Sydney</option> 
+            <option value=38>SydneyAirport</option> 
+            <option value=42>Waggawagga</option> 
+            <option value=45>Williamtown</option> 
+            <option value=47>Wollongong</option> 
+            <option value=9>Canberra</option> 
+            <option value=48>Tuggeranong</option> 
+            <option value=23>MountGinini</option> 
+            <option value=5>Ballarat</option> 
+            <option value=6>Bendigo</option>
+            <option value=35>Sale</option> 
+            <option value=19>MelbourneAirport</option> 
+            <option value=18>Melbourne</option> 
+            <option value=2>Mildura</option> 
+            <option value=25>Nhil</option> 
+            <option value=33>Portland</option> 
+            <option value=44>Watsonia</option>     <input type="text"  id="temp"   placeholder="MinTemp">      <input type="text"  id="temp"   placeholder="MaxTemp">  <input type="text"  id="temp"   placeholder="Rainfall">
+           <input type="text"  id="temp"   placeholder="WindGustSpeed"> <br><br>
+           &nbsp
+           <input type="text"  id="temp"   placeholder="WindSpeed9am"> &nbsp <input type="text"  id="temp"   placeholder="WindSpeed3pm">  &nbsp    <input type="text"  id="temp"   placeholder="Humidity9am"> &nbsp <input type="text"  id="temp"   placeholder="Humidity3pm">  &nbsp <input type="text"  id="temp"   placeholder="Pressure9am"> <br><br>&nbsp
+            <input type="text"  id="temp"   placeholder="Pressure3pm"> &nbsp   <input type="text"  id="temp"   placeholder="Temp9am">&nbsp  <input type="text"  id="temp"   placeholder="Temp3pm"> &nbsp
+             <input type="text"  id="temp"   placeholder="WindSpeed3pm">&nbsp  <input type="text"  id="temp"   placeholder="year">  <br><br> &nbsp<input type="text"  id="temp"   placeholder="month">&nbsp  <input type="text"  id="temp"   placeholder="day">   
+ </style></head>
+ <br><br>&nbsp  
+
+
+        <label for="RainToday"> RainToday:</label>
+         <select id=RainToday  name= "RainToday" >
+        	    <option value=2>No</option>   
+                <option value=4>Yes</option> 
+         </select> &nbsp;&nbsp;
+
+
+      <label for="windGustDir"> WindGustDir:</label>
+        <select id=WindGustDir  name= "windGustDir" >
+        	    <option value=14>W</option>   
+                <option value=15>WNW</option> 
+                <option value=0>WSW</option> 
+                <option value=7>NE</option>
+                <option value=13>NNW</option> 
+                <option value=10>N</option> 
+                <option value=2>NNE</option>
+                <option value=1>SW</option> 
+                <option value=6>ENE</option> 
+                <option value=11>SSE</option> 
+                <option value=12>S</option> 
+                <option value=9>NW</option> 
+                <option value=3>SE</option> 
+                <option value=8>ESE</option> 
+                <option value=5>E</option>
+                <option value=4>SSW</option> 
+       </select> &nbsp;&nbsp;
+
+        <label for="windDir9am"> WindDir9am:</label>
+        <select id=windDir9am  name= "windDir9am" >
+        	    <option value=14>W<option>   
+                <option value=15>WNW<option> 
+                <option value=16>WSW<option> 
+                <option value=23>NE<option>
+                <option value=29>NNW<option> 
+                <option value=26>N<option> 
+                <option value=18>NNE<option>
+                <option value=17>SW<option> 
+                <option value=22>ENE<option> 
+                <option value=27>SSE<option> 
+                <option value=28>S<option> 
+                <option value=25>NW<option> 
+                <option value=19>SE<option> 
+                <option value=24>ESE<option> 
+                <option value=21>E<option>
+                <option value=20>SSW<option> 
+       </select> &nbsp;&nbsp;
+
+        <label for="windDir3pm"> WindDir3pm:</label>
+        <select id=windDir3pm  name= "windDir3pm" >
+        	    <option value=14>W<option>   
+                <option value=15>WNW<option> 
+                <option value=0>WSW<option> 
+                <option value=7>NE<option>
+                <option value=13>NNW<option> 
+                <option value=10>N<option> 
+                <option value=2>NNE<option>
+                <option value=1>SW<option> 
+                <option value=6>ENE<option> 
+                <option value=11>SSE<option> 
+                <option value=12>S<option> 
+                <option value=9>NW<option> 
+                <option value=3>SE<option> 
+                <option value=8>ESE<option> 
+                <option value=5>E<option>
+                <option value=4>SSW<option> 
+       </select> &nbsp;&nbsp;
+
+
+
+<br>
+
+<br><br>
+
+<button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px">Predict</button>
+   
+   </form>
+<br>
+  
+   {{ prediction_text }}
+ 
+
+   <br>  
+   <br> 
+   <img src="data:image/png;base64,{{url_3}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/> 
+   <img src="data:image/png;base64,{{url_1}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/> 
+   <img src="data:image/png;base64,{{url_4}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'"/> 
+   <br> 
+   <br> 
+   <img src="data:image/png;base64,{{url_2}}" alt="Submit Form" height="150" width="711" onerror="this.style.display='none"/>
+
+</div>
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
